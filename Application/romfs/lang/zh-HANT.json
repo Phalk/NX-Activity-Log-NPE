@@ -1,0 +1,311 @@
+{
+    "allActivity": {
+        "sort": {
+            "firstPlayed": "首次遊玩時間排序",
+            "leastLaunched": "最少啟動次數排序",
+            "leastPlaytime": "最少遊玩時間排序",
+            "mostLaunched": "最多啟動次數排序",
+            "mostPlaytime": "最長遊戲時間排序",
+            "name": "名稱排序",
+            "recentlyPlayed": "最近遊玩時間排序"
+        }
+    },
+    "common": {
+        "12H": "$[h]$[s]",
+        "activityFor": {
+            "day": "遊玩天數 $[m] $[d]$[s]",
+            "dayYear": "遊玩年數 $[m] $[d]$[s], $[y]",
+            "month": "遊玩月數 $[m] $[y]",
+            "year": "遊玩年數 $[y]"
+        },
+        "AM": "上午",
+        "am": "上午",
+        "atmosphere": "大氣層",
+        "buttonHint": {
+            "back": "返回",
+            "date": "選擇日期",
+            "exit": "退出",
+            "ok": "確定",
+            "sort": "排序",
+            "view": "更換查看方式"
+        },
+        "close": "關閉",
+        "dateFormat": "$[m] $[d]$[s]",
+        "dateFormatYear": "$[m] $[d]$[s], $[y]",
+        "dateSuffix": {
+            "nd": "nd",
+            "rd": "rd",
+            "st": "st",
+            "th": "th"
+        },
+        "datePanel": {
+            "headingDate": "查看日期",
+            "headingMonth": "查看月份",
+            "headingYear": "查看年份",
+            "day": "天",
+            "month": "月",
+            "year": "年"
+        },
+        "default": "系統默認",
+        "disabled": "關閉",
+        "enabled": "開啟",
+        "heading": "$[name]的動態",
+        "lastPlayed": {
+            "future": "未來遊玩",
+            "secs": "幾秒鐘前最後一次遊玩",
+            "1min": "一分鐘前遊玩",
+            "mins": "$[m] 分鐘前遊玩",
+            "1hr": "一小時前遊玩",
+            "hrs": "$[h] 小時前遊玩",
+            "1day": "一天前遊玩",
+            "days": "$[d] 天前遊玩",
+            "date": "上次遊玩日期 $[m] $[d]$[s]",
+            "dateYear": "上次遊玩年份 $[m] $[d]$[s], $[y]"
+        },
+        "month": {
+            "jan": "一月",
+            "feb": "二月",
+            "mar": "三月",
+            "apr": "四月",
+            "may": "五月",
+            "jun": "六月",
+            "jul": "七月",
+            "aug": "八月",
+            "sep": "九月",
+            "oct": "十月",
+            "nov": "十一月",
+            "dec": "十二月",
+            "short": {
+                "jan": "一月",
+                "feb": "二月",
+                "mar": "三月",
+                "apr": "四月",
+                "may": "五月",
+                "jun": "六月",
+                "jul": "七月",
+                "aug": "八月",
+                "sep": "九月",
+                "oct": "十月",
+                "nov": "十一月",
+                "dec": "十二月"
+            }
+        },
+        "off": "關閉",
+        "on": "開啟",
+        "no": "否",
+        "noActivity": "這段時間沒有遊戲活動記錄",
+        "playedFor" : {
+            "0min": "遊玩少於 1 分鐘",
+            "1min": "遊玩 1 分鐘",
+            "mins": "遊玩 $[m] 分鐘",
+            "mins1sec": "遊玩 $[m] 分鐘 1 秒",
+            "1min1sec": "遊玩 1 分鐘 1 秒",
+            "1minSecs": "遊玩 1 分鐘 $[s] 秒",
+            "minsSecs": "遊玩 $[m] 分鐘 $[s] 秒",
+            "1hr": "遊玩 1 小時",
+            "hrs": "遊玩 $[h] 小時",
+            "hrs1min": "遊玩 $[h] 小時 1 分鐘",
+            "1hr1min": "遊玩 1 小時 1 分鐘",
+            "1hrMins": "遊玩 1 小時 $[m] 分鐘",
+            "hrsMins": "遊玩 $[h] 小時 $[m] 分鐘"
+        },
+        "playtime": {
+            "0sec": "0秒",
+            "1sec": "1秒",
+            "secs": "$[s] 秒",
+            "1min": "1 分鐘",
+            "mins": "$[m] 分鐘",
+            "mins1sec": "$[m] 分鐘 1 秒",
+            "1min1sec": "1 分鐘 1 秒",
+            "1minSecs": "1 分鐘 $[s] 秒",
+            "minsSecs": "$[m] 分鐘 $[s] 秒",
+            "1hr": "1 小時",
+            "hrs": "$[h] 小時",
+            "hrs1min": "$[h] 小時 1 分鐘",
+            "1hr1min": "1 小時 1 秒",
+            "1hrMins": "一小時 $[m] 分鐘",
+            "hrsMins": "$[h] 小時 $[m] 分鐘"
+        },
+        "playtimeHours": "遊玩時間(小時)",
+        "playtimeMinutes": "遊玩時間(分鐘)",
+        "PM": "下午",
+        "pm": "下午",
+        "reinx": "ReiNX",
+        "screen": {
+            "allActivity": "所有遊玩",
+            "recentActivity": "最近遊玩",
+            "settings": "設置"
+        },
+        "sort": {
+            "firstPlayed": "首次遊玩時間",
+            "heading": "標題",
+            "leastLaunched": "最少啟動次數",
+            "leastPlaytime": "最少遊玩時間",
+            "mostLaunched": "最多啟動次數",
+            "mostPlaytime": "最長遊玩時間",
+            "name": "名稱",
+            "recentlyPlayed": "最近最多遊玩次數"
+        },
+        "sxos": "SX OS",
+        "timesPlayed": {
+            "multiple": "遊玩 $[t] 次",
+            "once": "遊玩 1 次"
+        },
+        "totalPlaytime": {
+            "heading": "總共遊玩時間:",
+            "0sec": "總共遊玩時間: 0 秒",
+            "0min": "總共遊玩時間: 0 分鐘",
+            "1min": "總共遊玩時間: 1 分鐘",
+            "mins": "總共遊玩時間: $[m] 分鐘",
+            "mins1sec": "總共遊玩時間: $[m] 分鐘 1 秒",
+            "1min1sec": "總共遊玩時間: 1 分鐘 1 秒",
+            "1minSecs": "總共遊玩時間: 1 分鐘 $[s] 秒",
+            "minsSecs": "總共遊玩時間: $[m] 分鐘 $[s] 秒",
+            "1hr": "總共遊玩時間: 1 小時",
+            "hrs": "總共遊玩時間: $[h] 小時",
+            "hrs1min": "總共遊玩時間: $[h] 小時 1 分鐘",
+            "1hr1min": "總共遊玩時間: 1 小時 1 分鐘",
+            "1hrMins": "總共遊玩時間: 1 小時 $[m] 分鐘",
+            "hrsMins": "總共遊玩時間: $[h] 小時 $[m] 分鐘"
+        },
+        "view": {
+            "day": "天",
+            "heading": "查看遊玩活動",
+            "month": "月",
+            "year": "年"
+        },
+        "yes": "確定"
+    },
+    "customTheme": {
+        "accent": "語言",
+        "altBackground": "背景板",
+        "apply": "應用",
+        "background": "背景",
+        "picker": {
+            "alpha": "Alpha",
+            "blue": "藍色",
+            "green": "綠色",
+            "red": "紅色",
+            "tip": "提示:按住 ZL/ZR 改變顏色"
+        },
+        "heading": "自定義主題",
+        "highlight1": "高亮 1",
+        "highlight2": "高亮 2",
+        "highlightBG": "高亮背景",
+        "image": "使用背景圖片",
+        "imageError": {
+            "body": "此圖片沒有找到或者已損壞,請檢查名稱和存儲位置,將文件放到/config/NX-Activity-Log/background.png",
+            "heading": "發生錯誤..."
+        },
+        "imageHint": "將/config/NX-Activity-Log/background.png處圖片設置為背景,如果圖片小於1280x720,圖片將會被放大以適應",
+        "line": "行",
+        "mutedLine": "行尺寸",
+        "mutedText": "文字尺寸",
+        "preset": "從預設加載",
+        "selected": "選中",
+        "text": "文字"
+    },
+    "details": {
+        "allTime": "所有時間的活動",
+        "avgPlaytime": "平均遊玩時間",
+        "break": {
+            "appClosed": "程序關閉",
+            "appLaunched": "程序開啟",
+            "appResumed": "程序恢復",
+            "appSuspended": "程序暫停",
+            "heading": "遊玩章節細節",
+            "length": "章節長度",
+            "playtime": "總共遊玩時間"
+        },
+        "firstPlayed": "首次遊玩",
+        "lastPlayed": "上次遊玩",
+        "playSessions": "遊玩時段",
+        "playtime": "遊玩時間",
+        "popup": {
+            "heading": "遊戲時段代表遊戲啟動到退出之間的時間",
+            "msg1": "啟動時間，退出時間，遊玩時間和整體遊玩時間的百分比顯示",
+            "msg2": "選擇一個時段以查看更詳細的細分",
+            "msg3": "註意:帶有星號的會話在選定日期之前和/或之後開始。他們的遊戲時間已經被調整以反映當前的時間範圍，但是他們的分解將顯示整個會話的持續時間"
+        },
+        "timesPlayed": {
+            "heading": "遊玩次數",
+            "multiple": "$[t] 次",
+            "once": "1 次"
+        }
+    },
+    "recentActivity": {
+        "titleHeading": "遊玩標題"
+    },
+    "settings": {
+        "about": "感謝使用我的軟體,希望您能用得上它",
+        "appearance": {
+            "24H": "使用 24 小時",
+            "graph": "展示圖像參數",
+            "graphHint": "切換值是否在圖形上的每個條的上方可見",
+            "heading": "外觀",
+            "language": "語言",
+            "theme": {
+                "auto": "自動",
+                "custom": "自定義",
+                "dark": "經典黑",
+                "heading": "主題",
+                "light": "經典白"
+            },
+            "themeEdit": "自定義主題",
+            "themeHint": "應用程序要使用的主題。自動選擇黑色/白色基於您的開關設置。選擇自定義設置背景圖像和調整顏色"
+        },
+        "launch": {
+            "heading": "啟動選項",
+            "screen": "默認屏幕",
+            "screenHint": "啟動時/選擇用戶後顯示的屏幕",
+            "sort": "默認排序方式",
+            "sortHint": "在啟動時使用的“所有活動”的排序方法。",
+            "view": "默認顯示類型",
+            "viewHint": "活動期間，以查看推出"
+        },
+        "other": {
+            "heading": "其他設置",
+            "hideDeleted": "隱藏刪除的遊戲",
+            "hideDeletedHint": "在所有活動中顯示已經刪除的遊戲",
+            "replace": "替換用戶頁面",
+            "replaceBox": {
+                "error": "發生錯誤:",
+                "errorMsg1": "在預期的位置沒有找到此應用程序的.nro文件:",
+                "errorMsg2": "此特性要求.nro出現在此位置",
+                "errorMsg3": "請移動/重命名任何文件+文件夾，然後重試",
+                "success": "安裝成功!",
+                "successMsg1": "檢測到以下自制軟件並啟用了該特性:",
+                "successMsg2": "註意:此功能不使用系統設定，如果遇到任何錯誤，請在應用程序中禁用或刪除此功能",
+                "successMsg3": "<cfw文件夾>/0100000000001013/exefs.nsp"
+            },
+            "replaceHint": "用這個應用程序替換用戶頁面。需要LayeredFS和Atmosphere 0.10.0+、ReiNX或SXOS"
+        },
+        "support": "你可以在Ko-fi上支持我:",
+        "translations": "感謝以下人員對本程序翻譯的幫助:",
+        "update": "檢查更新",
+        "updateHint": "註意:如果使用90DNS，可能會遇到問題。如果是這種情況，只需再試一次"
+    },
+    "update": {
+        "cancel": "取消",
+        "download": {
+            "dl": "下載中...",
+            "error": "下載文件失敗",
+            "success": "更新文件下載成功!",
+            "successHint": "本應用將會更新並且關閉",
+            "successHintPage": "此應用將會更新並重啟"
+        },
+        "error": {
+            "heading": "檢查更新失敗!",
+            "tip": "檢查你的網路連接或者稍後再次嘗試"
+        },
+        "heading": "更新應用",
+        "newAvailable": "版本 $[v] 可用!",
+        "update": "更新",
+        "upToDate": "你的應用已更新!",
+        "version": "版本 $[v]",
+        "waiting": "在Github上檢查更新..."
+    },
+    "userSelect": {
+        "heading": "選擇一個用戶"
+    }
+}
