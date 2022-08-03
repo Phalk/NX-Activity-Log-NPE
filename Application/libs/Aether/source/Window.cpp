@@ -173,7 +173,7 @@ namespace Aether {
     }
 
     void Window::renderDebug(const double delta) {
-        size_t fps = static_cast<size_t>(1.0/(delta/1000.0));
+       /*  size_t fps = static_cast<size_t>(1.0/(delta/1000.0));
 
         // Form the string first
         std::string text = "FPS: " + std::to_string(fps) + " (" + std::to_string(static_cast<int>(delta)) + " ms)\n";
@@ -186,7 +186,7 @@ namespace Aether {
         info->convertToTexture();
         info->setColour(Colour(0, 200, 200, 200));
         info->render(5, Element::renderer->windowHeight() - info->height() - 5);
-        delete info;
+        delete info; */
     }
 
     void Window::renderFade(const double delta) {
@@ -402,9 +402,9 @@ namespace Aether {
         }
 
         // Render debug information and fade rectangle on very top
-        if (this->showDebug) {
+        /* if (this->showDebug) {
             this->renderDebug(delta);
-        }
+        } */
         this->renderFade(delta);
 
         // Present the framebuffer and return

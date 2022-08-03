@@ -48,8 +48,8 @@ VER_MICRO	:= 2
 #---------------------------------------------------------------------------------
 # Options for .nacp information
 #---------------------------------------------------------------------------------
-APP_TITLE   := 	NX Activity Log
-APP_AUTHOR	:= 	tallbl0nde (Nintendo Switch Profiles Edition)
+APP_TITLE   := 	NX Activity Log NPE
+APP_AUTHOR	:= 	tallbl0nde (Nintendo Profiles Edition)
 APP_VERSION	:=	$(VER_MAJOR).$(VER_MINOR).$(VER_MICRO)
 ICON 		:= 	icon.jpg
 
