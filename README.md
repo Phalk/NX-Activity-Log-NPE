@@ -9,10 +9,10 @@ This project is based on the original project by [tallbl0nde](https://github.com
 
 1. Download the latest release
 2. Setup your credentials on login.txt (you can get this config file along with the latest release).
-3. Open up the app.
-4. Go to the Config page.
+3. Open the homebrew app on your Nintendo Switch.
+4. Go to the Settings page.
 5. Select "Upload to Nintendo Profiles"
-6. Profit.
+6. If you've set up the credentials right the data should show in your profile.
 
 ## Credits
 
