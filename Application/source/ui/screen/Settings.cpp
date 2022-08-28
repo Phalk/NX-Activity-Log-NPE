@@ -113,24 +113,24 @@ namespace Screen {
         this->popuplist->setTextColour(this->app->theme()->text());
 	}
 	
-    void Settings::setupLangOverlay() {
+	/*     void Settings::setupLangOverlay() {
         this->preparePopupList("settings.appearance.language"_lang);
 		
         // Add an entry for each language
         Language lang = this->app->config()->gLang();
         for (int i = 0; i < Language::TotalLanguages; i++) {
-            Language l = (Language)i;
-            this->popuplist->addEntry(toString(l), [this, lang, l](){
-                if (lang != l) {
-                    this->app->config()->setGLang(l);
-                    Utils::Lang::setLanguage(l);
-                    this->app->reinitScreens(ScreenCreate::Language);
-				}
-			}, lang == l);
+		Language l = (Language)i;
+		this->popuplist->addEntry(toString(l), [this, lang, l](){
+		if (lang != l) {
+		this->app->config()->setGLang(l);
+		Utils::Lang::setLanguage(l);
+		this->app->reinitScreens(ScreenCreate::Language);
+		}
+		}, lang == l);
 		}
 		
         this->app->addOverlay(this->popuplist);
-	}
+	} */
 	
     void Settings::setupScreenOverlay() {
         this->preparePopupList("settings.launch.screen"_lang);
@@ -251,6 +251,7 @@ namespace Screen {
 		// EXPORT DO PHALK.NET/PROFILES
 		lb = new Aether::ListButton("settings.importExport.upload"_lang, [this]() {
 			this->app->exportToJSON();
+			this->msgbox->emptyBody();
 			int argc;
 			char *argv[100];
 			
@@ -310,9 +311,36 @@ namespace Screen {
 				/* Perform the request, res will get the return code */
 				res = curl_easy_perform(curl);
 				/* Check for errors */
-				if(res != CURLE_OK)
-				fprintf(stderr, "curl_easy_perform() failed: %s\n",
-				curl_easy_strerror(res));
+				if(res != CURLE_OK) {
+					// Create text and add to overlay
+					int bw, bh;
+					this->msgbox->getBodySize(&bw, &bh);
+					Aether::Element * body = new Aether::Element(0, 0, bw, bh);
+					Aether::TextBlock * tb = new Aether::TextBlock(50, 40, "settings.other.uploadNPE.error"_lang, 24, bw - 100);
+					tb->setColour(this->app->theme()->text());
+					body->addElement(tb);
+					tb = new Aether::TextBlock(50, tb->y() + tb->h() + 20, "settings.other.uploadNPE.errorMsg1"_lang, 20, body->w() - 100);
+					tb->setColour(this->app->theme()->mutedText());
+					body->addElement(tb);
+					this->msgbox->setBodySize(bw, tb->y() + tb->h() + 40);
+					this->msgbox->setBody(body);
+					this->app->addOverlay(this->msgbox);
+				}
+				else {
+					// Create text and add to overlay
+					int bw, bh;
+					this->msgbox->getBodySize(&bw, &bh);
+					Aether::Element * body = new Aether::Element(0, 0, bw, bh);
+					Aether::TextBlock * tbs = new Aether::TextBlock(50, 40, "settings.other.uploadNPE.success"_lang, 24, bw - 100);
+					tbs->setColour(this->app->theme()->text());
+					body->addElement(tbs);
+					tbs = new Aether::TextBlock(50, tbs->y() + tbs->h() + 20, "settings.other.uploadNPE.successMsg1"_lang + "\n\n" + "settings.other.uploadNPE.successMsg2"_lang + "\n" + "settings.other.uploadNPE.successMsg3"_lang, 20, body->w() - 100);
+					tbs->setColour(this->app->theme()->mutedText());
+					body->addElement(tbs);
+					this->msgbox->setBodySize(bw, tbs->y() + tbs->h() + 40);
+					this->msgbox->setBody(body);
+					this->app->addOverlay(this->msgbox);
+				}
 				
 				/* always cleanup */
 				curl_easy_cleanup(curl);
@@ -321,6 +349,7 @@ namespace Screen {
 				curl_mime_free(form);
 				/* free slist */
 				curl_slist_free_all(headerlist);
+				return;
 			}
 		});
 		lb->setLineColour(this->app->theme()->mutedLine());
@@ -335,17 +364,17 @@ namespace Screen {
         lh->setTextColour(this->app->theme()->text());
 		
         // LANGUAGE
-        this->optionLang = new Aether::ListOption("settings.appearance.language"_lang, toString(this->app->config()->gLang()), [this](){
-            this->setupLangOverlay();
-		});
-        this->optionLang->setHintColour(this->app->theme()->text());
-        this->optionLang->setValueColour(this->app->theme()->accent());
-        this->optionLang->setLineColour(this->app->theme()->mutedLine());
-        this->list->addElement(this->optionLang);
+		/*  this->optionLang = new Aether::ListOption("settings.appearance.language"_lang, toString(this->app->config()->gLang()), [this](){
+			this->setupLangOverlay();
+			});
+			this->optionLang->setHintColour(this->app->theme()->text());
+			this->optionLang->setValueColour(this->app->theme()->accent());
+			this->optionLang->setLineColour(this->app->theme()->mutedLine());
+		this->list->addElement(this->optionLang); */
 		
         // THEME
         this->optionTheme = new Aether::ListOption("settings.appearance.theme.heading"_lang, toString(this->app->config()->gTheme()), [this](){
-            this->setupThemeOverlay();
+			this->setupThemeOverlay();
 		});
         this->optionTheme->setHintColour(this->app->theme()->text());
         this->optionTheme->setValueColour(this->app->theme()->accent());
@@ -356,17 +385,17 @@ namespace Screen {
         this->list->addElement(lc);
 		
         this->optionThemeEdit = new Aether::ListButton("settings.appearance.themeEdit"_lang, [this]() {
-            this->app->pushScreen();
-            this->app->setScreen(ScreenID::CustomTheme);
+			this->app->pushScreen();
+			this->app->setScreen(ScreenID::CustomTheme);
 		});
         this->optionThemeEdit->setLineColour(this->app->theme()->mutedLine());
         // Customize button only enabled if theme is set to custom
         if (this->app->config()->gTheme() == ThemeType::Custom) {
-            this->optionThemeEdit->setTextColour(this->app->theme()->text());
+			this->optionThemeEdit->setTextColour(this->app->theme()->text());
 			} else {
-            this->optionThemeEdit->setTextColour(this->app->theme()->mutedText());
-            this->optionThemeEdit->setSelectable(false);
-            this->optionThemeEdit->setTouchable(false);
+			this->optionThemeEdit->setTextColour(this->app->theme()->mutedText());
+			this->optionThemeEdit->setSelectable(false);
+			this->optionThemeEdit->setTouchable(false);
 		}
         this->list->addElement(this->optionThemeEdit);
 		
@@ -374,9 +403,9 @@ namespace Screen {
 		
         // GRAPH VALUES
         this->optionGraph = new Aether::ListOption("settings.appearance.graph"_lang, (this->app->config()->gGraph() ? "common.yes"_lang : "common.no"_lang), [this](){
-            this->app->config()->setGGraph(!this->app->config()->gGraph());
-            this->optionGraph->setValue((this->app->config()->gGraph() ? "common.yes"_lang : "common.no"_lang));
-            this->optionGraph->setValueColour((this->app->config()->gGraph() ? this->app->theme()->accent() : this->app->theme()->mutedText()));
+			this->app->config()->setGGraph(!this->app->config()->gGraph());
+			this->optionGraph->setValue((this->app->config()->gGraph() ? "common.yes"_lang : "common.no"_lang));
+			this->optionGraph->setValueColour((this->app->config()->gGraph() ? this->app->theme()->accent() : this->app->theme()->mutedText()));
 		});
         this->optionGraph->setHintColour(this->app->theme()->text());
         this->optionGraph->setValueColour((this->app->config()->gGraph() ? this->app->theme()->accent() : this->app->theme()->mutedText()));
@@ -385,9 +414,9 @@ namespace Screen {
 		
         // USE 24H
         this->option24H = new Aether::ListOption("settings.appearance.24H"_lang, (this->app->config()->gIs24H() ? "common.yes"_lang : "common.no"_lang), [this](){
-            this->app->config()->setGIs24H(!this->app->config()->gIs24H());
-            this->option24H->setValue((this->app->config()->gIs24H() ? "common.yes"_lang : "common.no"_lang));
-            this->option24H->setValueColour((this->app->config()->gIs24H() ? this->app->theme()->accent() : this->app->theme()->mutedText()));
+			this->app->config()->setGIs24H(!this->app->config()->gIs24H());
+			this->option24H->setValue((this->app->config()->gIs24H() ? "common.yes"_lang : "common.no"_lang));
+			this->option24H->setValueColour((this->app->config()->gIs24H() ? this->app->theme()->accent() : this->app->theme()->mutedText()));
 		});
         this->option24H->setHintColour(this->app->theme()->text());
         this->option24H->setValueColour((this->app->config()->gIs24H() ? this->app->theme()->accent() : this->app->theme()->mutedText()));
@@ -407,7 +436,7 @@ namespace Screen {
 		
         // EXPORT
         lb = new Aether::ListButton("settings.importExport.export"_lang, [this]() {
-            this->app->exportToJSON();
+			this->app->exportToJSON();
 		});
 		
 		lb->setLineColour(this->app->theme()->mutedLine());
@@ -453,20 +482,20 @@ namespace Screen {
         // SCREEN
         std::string str = "";
         switch (this->app->config()->lScreen()) {
-            case ScreenID::RecentActivity:
+			case ScreenID::RecentActivity:
 			str = "common.screen.recentActivity"_lang;
 			break;
 			
-            case ScreenID::AllActivity:
+			case ScreenID::AllActivity:
 			str = "common.screen.allActivity"_lang;
 			break;
 			
-            default:
+			default:
 			// Never called but I don't like compiler warnings
 			break;
 		}
         this->optionScreen = new Aether::ListOption("settings.launch.screen"_lang, str, [this]() {
-            this->setupScreenOverlay();
+			this->setupScreenOverlay();
 		});
         this->optionScreen->setHintColour(this->app->theme()->text());
         this->optionScreen->setValueColour(this->app->theme()->accent());
@@ -478,7 +507,7 @@ namespace Screen {
 		
         // SORT METHOD
         this->optionSort = new Aether::ListOption("settings.launch.sort"_lang, toString(this->app->config()->lSort()), [this](){
-            this->setupSortOverlay();
+			this->setupSortOverlay();
 		});
         this->optionSort->setHintColour(this->app->theme()->text());
         this->optionSort->setValueColour(this->app->theme()->accent());
@@ -490,7 +519,7 @@ namespace Screen {
 		
         // VIEW
         this->optionView = new Aether::ListOption("settings.launch.view"_lang, toString(this->app->config()->lView()), [this](){
-            this->setupViewOverlay();
+			this->setupViewOverlay();
 		});
         this->optionView->setHintColour(this->app->theme()->text());
         this->optionView->setValueColour(this->app->theme()->accent());
@@ -543,7 +572,7 @@ namespace Screen {
 		this->list->addElement(new Aether::ListSeparator());
 		
 		// INFORMATION
-		lc = new Aether::ListComment("settings.translations"_lang + "\nChinese: tiansongyu\nFrench: xRock\nGerman: Ayk\nItalian: reinzanini\nKorean: jhs516\nPortugese: evertonstz\nRussian: Sookie69\nSpanish: ivanmarban\nTurkish: fpscan");
+		lc = new Aether::ListComment("http://www.phalk.net/nintendo/");
 		lc->setTextColour(this->app->theme()->mutedText());
 		this->list->addElement(lc);
 		lc = new Aether::ListComment("NX Activity Log v" + std::string(VER_STRING) + "\n" + "settings.about"_lang + "\n\n" + "settings.support"_lang + "\nhttps://ko-fi.com/tallbl0nde");
@@ -562,19 +591,19 @@ namespace Screen {
 		this->msgbox->setTextColour(this->app->theme()->accent());
 		
 		// Show update icon if needbe
-		this->updateElm =nullptr;
-		if (this->app->hasUpdate()) {
+		/* this->updateElm =nullptr;
+			if (this->app->hasUpdate()) {
 			this->updateElm = new Aether::Image(50, 669, "romfs:/icon/download.png");
 			this->updateElm->setColour(this->app->theme()->text());
 			this->addElement(this->updateElm);
-		}
+		} */
 		
 		this->popuplist = nullptr;
 		
 		// Activate appropriate item if necessary
 		if (this->createReason == ScreenCreate::Language) {
 			this->setFocussed(this->list);
-			this->list->setFocussed(this->optionLang);
+			//this->list->setFocussed(this->optionLang);
 			} else if (this->createReason == ScreenCreate::Theme) {
 			this->setFocussed(this->list);
 			this->list->setFocussed(this->optionTheme);
