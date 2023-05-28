@@ -13,7 +13,7 @@
 
 ## Credits
 
-* [zdm5477730]([https://github.com/tallbl0nde/NX-Activity-Log/releases](https://github.com/zdm65477730/NX-Activity-Log)) the fork used to make it work on FW 16.0.0.
+* [zdm5477730](https://github.com/zdm65477730/NX-Activity-Log) the fork used to make it work on FW 16.0.0.
 * [tallbl0nde](https://github.com/tallbl0nde/NX-Activity-Log/releases) the original creator of NX-Activity-Log.
 * AtlasNX for [SimpleIniParser](https://github.com/AtlasNX/SimpleIniParser)
   * Used to read/write the config file
