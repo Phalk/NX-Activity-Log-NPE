@@ -1,0 +1,347 @@
+{
+    "adjustPlaytime": {
+        "heading": "调整游戏时长",
+        "picker": {
+            "hour": "小时",
+            "minute": "分钟",
+            "second": "秒"
+        },
+        "save": "保存"
+    },
+    "allActivity": {
+        "sort": {
+            "firstPlayed": "按首次游戏时间排序",
+            "leastLaunched": "按最少游戏启动次数排序",
+            "leastPlaytime": "按最短游戏时长排序",
+            "mostLaunched": "按最多游戏启动次数排序",
+            "mostPlaytime": "按最长游戏时长排序",
+            "name": "按游戏名称排序",
+            "recentlyPlayed": "按最近游戏时间排序"
+        }
+    },
+    "common": {
+        "12H": "$[h]$[s]",
+        "activityFor": {
+            "day": "当日动态 $[m] $[d]$[s]",
+            "dayYear": "年日动态 $[m] $[d]$[s], $[y]",
+            "month": "当月动态 $[m] $[y]",
+            "year": "年度动态 $[y]"
+        },
+        "AM": "上午",
+        "am": "上午",
+        "atmosphere": "大气层",
+        "buttonHint": {
+            "back": "返回",
+            "cancel": "取消",
+            "date": "选择日期",
+            "exit": "退出",
+            "ok": "确定",
+            "sort": "排序",
+            "view": "更改视图"
+        },
+        "close": "关闭",
+        "dateFormat": "$[m] $[d]$[s]",
+        "dateFormatYear": "$[m] $[d]$[s], $[y]",
+        "dateSuffix": {
+            "nd": "日",
+            "rd": "日",
+            "st": "日",
+            "th": "日"
+        },
+        "datePanel": {
+            "headingDate": "查看日期",
+            "headingMonth": "查看月份",
+            "headingYear": "查看年份",
+            "day": "日",
+            "month": "月",
+            "year": "年"
+        },
+        "default": "系统默认",
+        "delete": "删除",
+        "disabled": "关闭",
+        "enabled": "开启",
+        "heading": "$[name]的动态",
+        "lastPlayed": {
+            "future": "将来游",
+            "secs": "几秒钟前刚玩过",
+            "1min": "一分钟前玩过",
+            "mins": "$[m] 分钟前玩过",
+            "1hr": "一小时前玩过",
+            "hrs": "$[h] 小时前玩过",
+            "1day": "一天前玩过",
+            "days": "$[d] 天前玩过",
+            "date": "上次游戏于 $[m] $[d]$[s]",
+            "dateYear": "上次游戏于 $[m] $[d]$[s], $[y]"
+        },
+        "month": {
+            "jan": "1月",
+            "feb": "2月",
+            "mar": "3月",
+            "apr": "4月",
+            "may": "5月",
+            "jun": "6月",
+            "jul": "7月",
+            "aug": "8月",
+            "sep": "9月",
+            "oct": "10月",
+            "nov": "11月",
+            "dec": "12月",
+            "short": {
+                "jan": "1月",
+                "feb": "2月",
+                "mar": "3月",
+                "apr": "4月",
+                "may": "5月",
+                "jun": "6月",
+                "jul": "7月",
+                "aug": "8月",
+                "sep": "9月",
+                "oct": "10月",
+                "nov": "11月",
+                "dec": "12月"
+            }
+        },
+        "off": "关闭",
+        "on": "开启",
+        "no": "否",
+        "noActivity": "这段时间没有记录任何游戏动态",
+        "playedFor" : {
+            "0min": "玩了少于 1 分钟",
+            "1min": "玩了 1 分钟",
+            "mins": "玩了 $[m] 分钟",
+            "mins1sec": "玩了 $[m] 分钟 1 秒",
+            "1min1sec": "玩了 1 分钟 1 秒",
+            "1minSecs": "玩了 1 分钟 $[s] 秒",
+            "minsSecs": "玩了 $[m] 分钟 $[s] 秒",
+            "1hr": "玩了 1 小时",
+            "hrs": "玩了 $[h] 小时",
+            "hrs1min": "玩了 $[h] 小时 1 分钟",
+            "1hr1min": "玩了 1 小时 1 分钟",
+            "1hrMins": "玩了 1 小时 $[m] 分钟",
+            "hrsMins": "玩了 $[h] 小时 $[m] 分钟"
+        },
+        "playtime": {
+            "0sec": "0 秒",
+            "1sec": "1 秒",
+            "secs": "$[s] 秒",
+            "1min": "1 分钟",
+            "mins": "$[m] 分钟",
+            "mins1sec": "$[m] 分钟 1 秒",
+            "1min1sec": "1 分钟 1 秒",
+            "1minSecs": "1 分钟 $[s] 秒",
+            "minsSecs": "$[m] 分钟 $[s] 秒",
+            "1hr": "1 小时",
+            "hrs": "$[h] 小时",
+            "hrs1min": "$[h] 小时 1 分钟",
+            "1hr1min": "1 小时 1 秒",
+            "1hrMins": "一小时 $[m] 分钟",
+            "hrsMins": "$[h] 小时 $[m] 分钟"
+        },
+        "playtimeHours": "游戏时长（小时）",
+        "playtimeMinutes": "游戏时长（分钟）",
+        "PM": "下午",
+        "pm": "下午",
+        "reinx": "ReiNX",
+        "screen": {
+            "allActivity": "所有动态",
+            "recentActivity": "最近动态",
+            "settings": "设置"
+        },
+        "sort": {
+            "firstPlayed": "按首次游戏时间",
+            "heading": "按游戏标题",
+            "leastLaunched": "按最少游戏启动次数",
+            "leastPlaytime": "按最短游戏时长",
+            "mostLaunched": "按最多游戏启动次数",
+            "mostPlaytime": "按最长游戏时长",
+            "name": "按名称",
+            "recentlyPlayed": "按最近游戏次数"
+        },
+        "sxos": "SX OS",
+        "timesPlayed": {
+            "multiple": "玩了 $[t] 次",
+            "once": "玩了 1 次"
+        },
+        "totalPlaytime": {
+            "heading": "总游戏时长：",
+            "0sec": "总游戏时长：0 秒",
+            "0min": "总游戏时长：0 分钟",
+            "1min": "总游戏时长：1 分钟",
+            "mins": "总游戏时长：$[m] 分钟",
+            "mins1sec": "总游戏时长：$[m] 分钟 1 秒",
+            "1min1sec": "总游戏时长：1 分钟 1 秒",
+            "1minSecs": "总游戏时长：1 分钟 $[s] 秒",
+            "minsSecs": "总游戏时长：$[m] 分钟 $[s] 秒",
+            "1hr": "总游戏时长：1 小时",
+            "hrs": "总游戏时长：$[h] 小时",
+            "hrs1min": "总游戏时长：$[h] 小时 1 分钟",
+            "1hr1min": "总游戏时长：1 小时 1 分钟",
+            "1hrMins": "总游戏时长：1 小时 $[m] 分钟",
+            "hrsMins": "总游戏时长：$[h] 小时 $[m] 分钟"
+        },
+        "view": {
+            "day": "按天",
+            "heading": "查看动态",
+            "month": "按月",
+            "year": "按年"
+        },
+        "yes": "确定"
+    },
+    "customTheme": {
+        "accent": "重音符号",
+        "altBackground": "背景面板",
+        "apply": "应用",
+        "background": "背景",
+        "picker": {
+            "alpha": "透明度",
+            "blue": "蓝色",
+            "green": "绿色",
+            "red": "红色",
+            "tip": "提示：按住 ZL/ZR 可以更快的更改数值"
+        },
+        "heading": "自定义主题",
+        "highlight1": "高亮动画1",
+        "highlight2": "高亮动画2",
+        "highlightBG": "高亮背景",
+        "image": "使用背景图片",
+        "imageError": {
+            "body": "找不到图像或图像已损坏。请检查它是否正确命名或保存，并且放置在sdmc:/config/NX-Activity-Log/background.png",
+            "heading": "发生错误..."
+        },
+        "imageHint": "将位于sdmc:/config/NX-Activity-Log/background.png的图像设置为应用程序的背景。如果图像分辨率不是 1280x720，它将调整为适合的大小",
+        "line": "行",
+        "mutedLine": "暗色线条",
+        "mutedText": "暗淡文本",
+        "preset": "从预设加载",
+        "selected": "已选中",
+        "text": "文本"
+    },
+    "details": {
+        "allTime": "所有时间的动态",
+        "avgPlaytime": "平均游戏时长",
+        "break": {
+            "appClosed": "程序已关闭",
+            "appLaunched": "程序已启动",
+            "appResumed": "程序已恢复",
+            "appSuspended": "程序已挂起",
+            "heading": "游戏会话细节",
+            "length": "会话时长",
+            "playtime": "总游戏时长"
+        },
+        "firstPlayed": "首次游戏",
+        "lastPlayed": "上次游戏",
+        "playSessions": "游戏会话",
+        "playtime": "游戏时长",
+        "popup": {
+            "heading": "游戏会话表示游戏从启动到连续退出之间的时间。",
+            "msg1": "显示启动时间、退出时间、游戏时间和占游戏时间的百分比。",
+            "msg2": "选择会话以查看更详细的明细数据。",
+            "msg3": "注：带有星号的会话在所选日期之前开始和/或结束。他们的游戏时间已经调整，以反映当前的时间范围，但是他们的明细将显示整个会话的持续时间。"
+        },
+        "timesPlayed": {
+            "heading": "游戏次数",
+            "multiple": "$[t] 次",
+            "once": "1 次"
+        }
+    },
+    "hideTitles": {
+        "heading": "选择要隐藏的游戏",
+        "save": "保存",
+        "titleHidden": "游戏隐藏",
+        "titlesHidden": "隐藏的游戏"
+    },
+    "recentActivity": {
+        "titleHeading": "游玩的游戏"
+    },
+    "settings": {
+        "about": "感谢使用我的软件，希望您能用得上它！",
+        "appearance": {
+            "24H": "使用 24 小时制",
+            "graph": "显示图形值",
+            "graphHint": "切换是否在图里每个条的上方显示数值",
+            "heading": "外观",
+            "language": "语言",
+            "theme": {
+                "auto": "自动",
+                "custom": "自定义",
+                "dark": "经典黑",
+                "heading": "主题",
+                "light": "经典白"
+            },
+            "themeEdit": "自定义主题",
+            "themeHint": "用于应用程序的主题。自动根据您的NS的设置选择暗色系或者亮色系主题。选择自定义可以设置背景图像并调整颜色。"
+        },
+        "importExport": {
+            "confirmDelete": "您确定要删除所有导入的数据吗？",
+            "confirmDeleteBody": "此操作无法撤消。",
+            "deleteImport": "删除导入的数据",
+            "deleteImportHint": "删除之前导入的游玩数据。必须重新启动应用程序才能使其生效。",
+            "deleteSuccessful": "已成功删除导入的数据。",
+            "export": "将游玩数据导出为JSON文件",
+            "exporting": "正在导出数据...",
+            "exportHint": "将所有用户的游玩数据导出到JSON文件：sdmc:/switch/NX-Activity-Log/export.json。如果该文件已经存在，它将被覆盖。",
+            "exportSuccessful": "游玩数据导出成功。",
+            "import": "从JSON文件导入游玩数据",
+            "importing": "正在导入数据...",
+            "importHint": "从JSON文件：sdmc:/switch/NX-Activity-Log/import.json中导入游玩数据到NX-Activity-Log中，并覆盖之前导入的任何数据。数据将被关联到匹配的用户名。必须重新启动应用程序才能使其生效。",
+            "importSuccessful": "游玩数据导入成功。",
+            "heading": "导入和导出",
+            "noImportFile": "在所指定的位置找不到import.json文件。"
+        },
+        "launch": {
+            "heading": "启动选项",
+            "screen": "默认屏幕",
+            "screenHint": "启动时或选择用户后显示的屏幕",
+            "sort": "默认排序方式",
+            "sortHint": "在启动时使用的“所有动态”的排序方法。",
+            "view": "默认显示类型",
+            "viewHint": "在启动时查看的动态期间。"
+        },
+        "other": {
+            "adjust": "调整游戏时间",
+            "adjustHint": "为所选用户单独调整每个游戏的游戏时间。",
+            "heading": "其他设置",
+            "hide": "隐藏游戏",
+            "hideHint": "在NX-Activity-Log中选择要隐藏的游戏。",
+            "replace": "替换用户页",
+            "replaceBox": {
+                "error": "发生错误：",
+                "errorMsg1": "在预期的位置没有找到此应用程序的.nro文件：",
+                "errorMsg2": "此功能要求.nro文件存在于此位置。",
+                "errorMsg3": "请移动或重命名任意文件和文件夹，然后重试。",
+                "success": "安装成功！",
+                "successMsg1": "检测到以下自制系统并启用了此功能：",
+                "successMsg2": "注意：此功能不使用任何系统模块，如果您遇到任何错误，请在应用中禁用此功能或删除",
+                "successMsg3": "sdmc:/<自制系统文件夹>/0100000000001013/exefs.nsp"
+            },
+            "replaceHint": "用这个应用程序替换用户页。需要LayeredFS支持以及自制系统Atmosphere 0.10.0+、ReiNX或SXOS。"
+        },
+        "support": "你可以在Ko-fi网站上支持我：",
+        "translations": "感谢以下人员在翻译应用程序时提供的帮助：",
+        "update": "检查更新",
+        "updateHint": "注意：如果您使用90DNS，您可能会遇到问题。如果是这种情况，只需再试一次。"
+    },
+    "update": {
+        "cancel": "取消",
+        "download": {
+            "dl": "下载中...",
+            "error": "无法下载文件",
+            "success": "更新已下载！",
+            "successHint": "本应用程序即将更新并关闭。",
+            "successHintPage": "本应用程序即将更新并重新启动。"
+        },
+        "error": {
+            "heading": "无法检查更新！",
+            "tip": "检查你的网络连接或者稍后再次尝试"
+        },
+        "heading": "更新应用",
+        "newAvailable": "版本 $[v] 可用！",
+        "update": "更新",
+        "upToDate": "您的应用程序是最新的！",
+        "version": "版本 $[v]",
+        "waiting": "正在检查GitHub以获取更新..."
+    },
+    "userSelect": {
+        "heading": "选择用户"
+    }
+}
