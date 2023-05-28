@@ -5,7 +5,7 @@
 ## How to upload to phalk.net/nintendo
 
 1. Download the app and create an account on the website.
-2. Setup your created credentials on the login.txt file (a template is included in the release).
+2. Setup your created credentials in the login.txt file (a template is included in the release).
 3. Open the homebrew app on your Nintendo Switch.
 4. Go to the Settings page.
 5. Select "Upload to Nintendo Profiles"
