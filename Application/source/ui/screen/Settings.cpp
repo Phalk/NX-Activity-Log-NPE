@@ -8,6 +8,7 @@
 #include <string.h>
 #include <curl/curl.h>
 #include "SimpleIniParser.hpp"
+#include <unistd.h>
 
 using namespace simpleIniParser;
 
@@ -340,22 +341,18 @@ namespace Screen {
         Aether::ListButton *lb = new Aether::ListButton("settings.importExport.upload"_lang, [this]()
 			{
 			this->app->pushScreen();
-			this->app->setScreen(ScreenID::Update); });
+			this->app->setScreen(ScreenID::Update); 
+            });
 			
-			// EXPORT DO PHALK.NET/PROFILES
+			// EXPORT TO PHALK.NET/PROFILES
 			lb = new Aether::ListButton("Upload play data to phalk.net/nintendo", [this]()
 				{
-                this->showExportOverlay();
-                    this->app->exportToJSON(this->progressValue);
                     this->job = Job::Export;
 
-                    this->prepareMessageBox();
-                    this->msgbox->addTopButton("Uploaded successfully!", [this](){
-                        this->msgbox->close();
-                    });
-
-					int argc;
+					int argc = 0;
 					char *argv[100];
+
+                    std::string message;
 					
 					CURL *curl;
 					CURLcode res;
@@ -410,9 +407,10 @@ namespace Screen {
 						/* Perform the request, res will get the return code */
 						res = curl_easy_perform(curl);
 						/* Check for errors */
-						if (res != CURLE_OK)
+						if (res != CURLE_OK) {
 						fprintf(stderr, "curl_easy_perform() failed: %s\n",
 						curl_easy_strerror(res));
+                        }
 						
 						/* always cleanup */
 						curl_easy_cleanup(curl);
@@ -421,34 +419,27 @@ namespace Screen {
 						curl_mime_free(form);
 						/* free slist */
 						curl_slist_free_all(headerlist);
+                    } 
+                    this->showExportOverlay();
+                    this->app->exportToJSON(this->progressValue);
+                    
+                    this->prepareMessageBox();
+                    this->msgbox->addTopButton("common.buttonHint.ok"_lang, [this]() {
+                        this->msgbox->close();
+                    });
+          
+                });
 
-                        // Create text and add to overlay
-						        int bw, bh;
-                                this->msgbox->getBodySize(&bw, &bh);
-                                Aether::Element * body = new Aether::Element(0, 0, bw, bh);
-                                Aether::TextBlock * tb = new Aether::TextBlock(50, 40, "Upload to phalk.net/nintendo", 24, bw - 100);
-                                tb->setColour(this->app->theme()->text());
-                                body->addElement(tb);
-                                tb = new Aether::TextBlock(50, tb->y() + tb->h() + 20, "Uploaded successfully.", 20, bw - 100);
-                                tb->setColour(this->app->theme()->mutedText());
-                                body->addElement(tb);
-                                this->msgbox->setBodySize(bw, tb->y() + tb->h() + 40);
-                                this->msgbox->setBody(body);
-                                this->app->addOverlay(this->msgbox);
-                        
-						return;
-						
-					} });
-					lb->setLineColour(this->app->theme()->mutedLine());
-					lb->setTextColour(this->app->theme()->text());
-					this->list->addElement(lb);
-					Aether::ListComment *lc = new Aether::ListComment("");
-					lc->setTextColour(this->app->theme()->mutedText());
-					this->list->addElement(lc);
-					
-					Aether::ListHeading *lh = new Aether::ListHeading("");
-					lh->setRectColour(this->app->theme()->mutedLine());
-					lh->setTextColour(this->app->theme()->text());
+        lb->setLineColour(this->app->theme()->mutedLine());
+        lb->setTextColour(this->app->theme()->text());
+        this->list->addElement(lb);
+        Aether::ListComment *lc = new Aether::ListComment("");
+        lc->setTextColour(this->app->theme()->mutedText());
+        this->list->addElement(lc);
+        
+        Aether::ListHeading *lh = new Aether::ListHeading("");
+        lh->setRectColour(this->app->theme()->mutedLine());
+        lh->setTextColour(this->app->theme()->text());
 
         // LANGUAGE
         this->optionLang = new Aether::ListOption("settings.appearance.language"_lang, toString(this->app->config()->gLang()), [this](){
