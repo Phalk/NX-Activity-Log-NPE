@@ -1,3 +1,8 @@
+# THIS APPLICATION WAS REPLACED BY: https://github.com/Phalk/PhalkProfiles-Switch. This will no longer work to upload data to Phalk Profiles.
+
+
+
+---
 # NX Activity Log Nintendo mod for phalk.net/nintendo
 
 [Download](https://github.com/Phalk/NX-Activity-Log-NPE/releases)
